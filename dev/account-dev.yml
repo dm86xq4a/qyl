@@ -1,0 +1,32 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url: /info.html
+  client:
+    service-url:
+      defaultZone: http://localhost:20000/eureka/
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/qyl
+      username: qyl  
+      password: wansui
+  http:
+    multipart:
+      max-file-size: 500Mb
+      max-request-size: 500Mb
+  datasource:
+    name: mydb
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/myaccounts?useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver 
+mybatis:
+  mapper-locations:
+    - classpath:/mapper/*.xml
+  type-aliases-package: com.qyl.model
+logging:
+  file: D:/logs/my-account-manager-domain.log
+  level:
+    root: INFO
